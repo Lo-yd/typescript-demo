@@ -23,11 +23,11 @@ class Food {
   change () {
     //生成随机位置
     //食物坐标整10
-    let left = Math.floor(Math.random() * 30) * 10;
-    let top = Math.floor(Math.random() * 30) * 10;
+    let left = Math.round(Math.random() * 29) * 10;
+    let top = Math.round(Math.random() * 29) * 10;
 
     this.element.style.left = `${left}px`;
-    this.element.style.left = `${top}px`;
+    this.element.style.top = `${top}px`;
   }
 }
 export default Food;
