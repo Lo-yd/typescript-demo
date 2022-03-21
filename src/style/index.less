@@ -1,3 +1,73 @@
+//设置变量
+@bg-color: #b7d4a8;
+
+//清除默认样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #bfa;
+  font: bold 20px "Courier";
+}
+//主窗口样式
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
+
+  //flex布局
+  display: flex;
+  // 主轴排列
+  flex-flow: column;
+  align-items: center;
+  // 主轴对齐方式
+  justify-content: space-around;
+
+  #stage {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    position: relative;
+
+    //蛇的样式
+    #snake {
+      &>div {
+         width: 10px;
+         height: 10px;
+         background-color: #000;
+         border: 1px solid @bg-color;
+         position: absolute;
+      }
+    }
+    #food {
+      width: 10px;
+      height: 10px;
+      border: 1px solid @bg-color;
+      position: absolute;
+      top: 50px;
+      left: 90px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: space-between;
+
+      &>div {
+        width: 4px;
+        height: 4px;
+        background-color: #000;
+        transform: rotate(45deg)
+      }
+    }
+  }
+  //记分牌
+  #score-panel {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
